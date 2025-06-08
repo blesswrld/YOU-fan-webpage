@@ -33,7 +33,7 @@ const Navbar = () => {
                     >
                         {/* Логотип */}
                         <Image
-                            src="/images/logo/you-newLogo.png"
+                            src="/images/logo/You-newLogo.png"
                             alt="YOU Logo"
                             width={96}
                             height={96}
