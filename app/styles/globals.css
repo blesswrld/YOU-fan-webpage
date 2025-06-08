@@ -1,0 +1,122 @@
+/* app/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Подключаем шрифт Montserrat через CSS @import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: hsl(var(--b2));
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--bc) / 0.5);
+    border-radius: 4px;
+    border: 2px solid hsl(var(--b2));
+}
+
+@keyframes fadeInMoveUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-in-up {
+    animation: fadeInMoveUp 1s ease-out forwards;
+    opacity: 0;
+}
+.delay-200 {
+    animation-delay: 0.2s;
+}
+.delay-400 {
+    animation-delay: 0.4s;
+}
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+/* Анимация пульсации для "сердца" в футере */
+@keyframes pulseHeart {
+    0%,
+    100% {
+        transform: scale(1);
+        color: hsl(var(--er));
+    }
+    50% {
+        transform: scale(1.2);
+        color: hsl(var(--sc));
+    }
+}
+.animate-pulse {
+    animation: pulseHeart 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseBlood {
+    0% {
+        box-shadow: 0 0 15px hsla(0, 100%, 50%, 0.7),
+            0 0 25px hsla(0, 100%, 60%, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px hsla(0, 100%, 50%, 0.9),
+            0 0 40px hsla(0, 100%, 60%, 0.6);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 15px hsla(0, 100%, 50%, 0.7),
+            0 0 25px hsla(0, 100%, 60%, 0.4);
+        transform: scale(1);
+    }
+}
+.hover\:animate-pulse-blood:hover {
+    animation: pulseBlood 1.5s infinite ease-in-out;
+}
+
+:root {
+    --background: var(--b1);
+    --foreground: var(--bc);
+
+    --card: var(--b2);
+    --card-foreground: var(--bc);
+
+    --popover: var(--b1);
+    --popover-foreground: var(--bc);
+
+    --primary: var(--p);
+    --primary-foreground: var(--pc);
+    --secondary: var(--s);
+    --secondary-foreground: var(--sc);
+
+    --muted: hsl(var(--n) / 0.5);
+    --muted-foreground: hsl(var(--bc) / 0.7);
+
+    --accent: var(--a);
+    --accent-foreground: var(--ac);
+
+    --destructive: var(--er);
+    --destructive-foreground: var(--pc);
+
+    --border: hsl(var(--bc) / 0.2);
+    --input: hsl(var(--bc) / 0.3);
+    --ring: var(--p);
+
+    --radius: 0.5rem;
+}

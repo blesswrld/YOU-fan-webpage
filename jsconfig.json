@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/components/*": ["./components/*"], // Если components в корне
+            "@/*": ["./*"]
+        },
+        "jsx": "preserve"
+    },
+    "include": [
+        "next-env.d.ts",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts"
+    ],
+    "exclude": ["node_modules"]
+}
